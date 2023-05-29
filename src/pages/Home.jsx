@@ -1,15 +1,8 @@
 import React from 'react';
+import Carousela from '../components/Carousel';
 
 function Home() {
-  return (
-    <div
-      style={{
-        backgroundColor: 'yellow',
-        width: '100%',
-        minHeight: 'calc(100vh - 80px)',
-      }}
-    />
-  );
+  return <Carousela />;
 }
 
 export default Home;
