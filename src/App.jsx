@@ -2,12 +2,11 @@ import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Quiz from './pages/Quiz';
-import Lightsaber from './pages/Lightsaber';
+import Duel from './pages/Duel';
 import SoundBoard from './pages/Soundboard';
 import Translator from './pages/Translator';
-
 import './reset.css';
+import CharacterQuiz from './pages/CharacterQuiz';
 
 function App() {
   return (
@@ -15,10 +14,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Navbar />}>
           <Route index element={<Home />} />
-          <Route path="Quiz" element={<Quiz />} />
-          <Route path="Lightsaber" element={<Lightsaber />} />
-          <Route path="SoundBoard" element={<SoundBoard />} />
-          <Route path="Galactic Translator" element={<Translator />} />
+          <Route path="Quiz" index element={<CharacterQuiz />} />
+          <Route path="Lightsaber" index element={<Duel />} />
+          <Route path="SoundBoard" index element={<SoundBoard />} />
+          <Route path="Galactic Translator" index element={<Translator />} />
         </Route>
       </Routes>
     </BrowserRouter>
