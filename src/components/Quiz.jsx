@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Quiz.css';
 
 function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0);
