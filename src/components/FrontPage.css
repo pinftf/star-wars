@@ -1,0 +1,7 @@
+.front-page {
+  display: flex;
+  flex-direction: column;
+}
+.start-quiz-button {
+  color: yellow;
+}
