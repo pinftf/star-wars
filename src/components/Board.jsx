@@ -5,13 +5,13 @@ function Board() {
   const sounds = [
     {
       name: 'Lightsaber',
-      // eslint-disable-next-line global-require
-      src: require('../sounds/lightsaber.mp3').default,
+
+      src: '../sounds/lightsaber.mp3',
     },
     {
       name: 'Chewbacca',
-      // eslint-disable-next-line global-require
-      src: require('../sounds/lightsaber.mp3').default,
+
+      src: '../sounds/chewbacca.mp3',
     },
   ];
   return (
