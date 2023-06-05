@@ -11,14 +11,13 @@ import CharacterQuiz from './pages/CharacterQuiz';
 function App() {
   return (
     <BrowserRouter>
+      <Navbar />
       <Routes>
-        <Route path="/" element={<Navbar />}>
-          <Route index element={<Home />} />
-          <Route path="Quiz" index element={<CharacterQuiz />} />
-          <Route path="Lightsaber" index element={<Duel />} />
-          <Route path="SoundBoard" index element={<SoundBoard />} />
-          <Route path="Galactic Translator" index element={<Translator />} />
-        </Route>
+        <Route path="/quiz" element={<CharacterQuiz />} />
+        <Route path="/lightsaber" element={<Duel />} />
+        <Route path="/soundBoard" element={<SoundBoard />} />
+        <Route path="/translator" element={<Translator />} />
+        <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
   );

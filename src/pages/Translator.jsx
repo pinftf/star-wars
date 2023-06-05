@@ -1,8 +1,5 @@
 import React from 'react';
-import Board from '../components/Board';
 
-function Translator() {
-  return <Board />;
-}
+function Translator() {}
 
 export default Translator;
