@@ -1,11 +1,12 @@
 import React from 'react';
 import SoundButton from './SoundButton';
+import  saber  from './lightsaber.mp3';
 
 function Board() {
   const sounds = [
     {
       name: 'Lightsaber',
-      src: './lightsaber.mp3',
+      src:  saber 
     },
     {
       name: 'Chewbacca',
