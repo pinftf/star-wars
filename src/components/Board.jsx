@@ -1,16 +1,17 @@
 import React from 'react';
 import SoundButton from './SoundButton';
-import  saber  from './lightsaber.mp3';
 
 function Board() {
   const sounds = [
     {
       name: 'Lightsaber',
-      src:  saber 
+      // eslint-disable-next-line global-require
+      src: require('../sounds/lightsaber.mp3').default,
     },
     {
       name: 'Chewbacca',
-      src: './chewbacca.mp3',
+      // eslint-disable-next-line global-require
+      src: require('../sounds/lightsaber.mp3').default,
     },
   ];
   return (

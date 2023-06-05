@@ -6,8 +6,7 @@ function SoundButton({ soundSrc }) {
     audio.play();
   };
   return (
-    // eslint-disable-next-line react/button-has-type
-    <button className="sound-button" onClick={playSound}>
+    <button type="button" className="sound-button" onClick={playSound}>
       Play Sound
     </button>
   );
