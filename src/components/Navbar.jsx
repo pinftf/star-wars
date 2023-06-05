@@ -35,22 +35,22 @@ function Navbar() {
         </button>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <Link to="quiz" className="nav-links" onClick={closeMenu}>
+            <Link to="/quiz" className="nav-links" onClick={closeMenu}>
               Character Quiz
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="lightsaber" className="nav-links" onClick={closeMenu}>
+            <Link to="/lightsaber" className="nav-links" onClick={closeMenu}>
               Lightsaber Duel
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="soundboard" className="nav-links" onClick={closeMenu}>
+            <Link to="/soundboard" className="nav-links" onClick={closeMenu}>
               SoundBoard
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="translator" className="nav-links" onClick={closeMenu}>
+            <Link to="/translator" className="nav-links" onClick={closeMenu}>
               Galactic Translator
             </Link>
           </li>
