@@ -4,9 +4,9 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Duel from './pages/Duel';
 import SoundBoard from './pages/Soundboard';
-import Translator from './pages/Translator';
 import './reset.css';
 import CharacterQuiz from './pages/CharacterQuiz';
+import Galactic from './pages/Galactic';
 
 function App() {
   return (
@@ -16,7 +16,7 @@ function App() {
         <Route path="/quiz" element={<CharacterQuiz />} />
         <Route path="/lightsaber" element={<Duel />} />
         <Route path="/soundBoard" element={<SoundBoard />} />
-        <Route path="/translator" element={<Translator />} />
+        <Route path="/translator" element={<Galactic />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
