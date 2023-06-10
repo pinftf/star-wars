@@ -1,82 +1,79 @@
 import React, { useState, useEffect } from 'react';
 import './Lightsaber.css';
 
-function Lightsaber() {
-  const [position, setPosition] = useState({
+function generateUniqueId() {
+  return Math.random().toString(36).substr(2, 9);
+}
+
+function Lightsaber({ additionalObjects }) {
+  const [lightsaberPosition, setLightsaberPosition] = useState({
     x: 0,
     y: 0,
   });
   const [objects, setObjects] = useState([]);
 
   const handleMouseMove = (event) => {
-    setPosition({
-      x: event.clientX,
-      y: event.clientY,
-    });
-  };
+    const lightsaberWidth = 4;
+    const lightsaberHeight = 400;
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
 
-  const handleObjectClick = (index) => {
+    const lightsaberX = mouseX - lightsaberWidth / 2;
+    const lightsaberY = mouseY - lightsaberHeight;
+
+    setLightsaberPosition({
+      x: lightsaberX,
+      y: lightsaberY,
+    });
+
     setObjects((prevObjects) => {
-      const updatedObjects = [...prevObjects];
-      updatedObjects.splice(index, 1);
-      return updatedObjects;
+      return prevObjects.map((object) => {
+        const rect = object.ref.current.getBoundingClientRect();
+        const isColliding =
+          lightsaberX > rect.left &&
+          lightsaberX < rect.right &&
+          lightsaberY > rect.top &&
+          lightsaberY < rect.bottom;
+
+        return {
+          id: object.id,
+          ref: object.ref,
+          visible: !isColliding,
+        };
+      });
     });
   };
 
   useEffect(() => {
-    const lightsaber = document.getElementById('lightsaber');
-    lightsaber.style.left = `${position.x}px`;
-    lightsaber.style.top = `${position.y}px`;
+    const newObjects = additionalObjects.map(() => ({
+      id: generateUniqueId(),
+      ref: React.createRef(),
+      visible: true,
+    }));
 
-    objects.forEach((object, index) => {
-      const objectRef = object.ref;
-      if (objectRef.current) {
-        const rect = objectRef.current.getBoundingClientRect();
-        const isColliding =
-          position.x > rect.left &&
-          position.x < rect.right &&
-          position.y > rect.top &&
-          position.y < rect.bottom;
-
-        if (isColliding) {
-          handleObjectClick(index);
-        }
-      }
-    });
-  }, [position, objects]);
+    setObjects(newObjects);
+  }, [additionalObjects]);
 
   return (
     <div className="lightsaber-container" onMouseMove={handleMouseMove}>
       <div
         id="lightsaber"
         className="lightsaber"
-        onClick={() => handleObjectClick(-1)}
-        role="button"
-        tabIndex={0}
-        onKeyDown={(event) => {
-          if (event.key === 'Enter' || event.key === ' ') {
-            handleObjectClick(-1);
-          }
+        style={{
+          left: lightsaberPosition.x,
+          top: lightsaberPosition.y,
         }}
       />
-      {objects.map((object) => {
-        const { id } = object;
-        return (
-          <div
-            key={id}
-            className="object"
-            ref={object.ref}
-            role="button"
-            tabIndex={0}
-            onClick={() => handleObjectClick(id)}
-            onKeyDown={(event) => {
-              if (event.key === 'Enter' || event.key === ' ') {
-                handleObjectClick(id);
-              }
-            }}
-          />
-        );
-      })}
+      {objects.map((object) => (
+        <div
+          key={object.id}
+          className="object"
+          ref={object.ref}
+          style={{
+            visibility: object.visible ? 'visible' : 'hidden',
+          }}
+        />
+      ))}
     </div>
   );
 }
