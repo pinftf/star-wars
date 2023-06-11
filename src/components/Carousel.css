@@ -124,6 +124,10 @@ li {
   background-color: transparent;
   background-size: cover;
 }
+.carousel__slide:nth-child(even) img {
+  max-width: 100%;
+  max-height: 140%;
+}
 
 .carousel__slide:before {
   content: counter(item);
@@ -168,6 +172,17 @@ li {
   animation-name: none;
 }
 
+.carousel__caption {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 1rem;
+  text-align: center;
+}
 .carousel__navigation {
   position: absolute;
   bottom: 0;

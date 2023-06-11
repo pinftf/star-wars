@@ -1,38 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import Button from './Button';
 import './Navbar.css';
 import logo from '../images/star-wars-logo.png';
 
 function Navbar() {
   const [click, setClick] = useState(false);
-  const [button, setButton] = useState(true);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const handleClick = () => setClick(!click);
   const closeMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
   };
-  window.addEventListener('resize', showButton);
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  }, []);
+
+  const logoStyle =
+    windowWidth <= 960
+      ? {
+          width: '80px',
+        }
+      : {
+          width: '120px',
+        };
 
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-logo">
-            <img className="navbar-logo-img" src={logo} alt="logo" />
+            <img
+              className="navbar-logo-img"
+              src={logo}
+              alt="logo"
+              style={logoStyle}
+            />
           </Link>
+          <button type="button" className="menu-icon" onClick={handleClick}>
+            <FontAwesomeIcon icon={click ? faTimes : faBars} />
+          </button>
         </div>
-        <button type="button" className="menu-icon" onClick={handleClick}>
-          <FontAwesomeIcon icon={click ? faTimes : faBars} />
-        </button>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
             <Link to="/quiz" className="nav-links" onClick={closeMenu}>
@@ -55,7 +66,6 @@ function Navbar() {
             </Link>
           </li>
         </ul>
-        {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
       </nav>
       <Outlet />
     </>
