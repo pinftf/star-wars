@@ -5,3 +5,8 @@
 .start-quiz-button {
   color: yellow;
 }
+body {
+  background-image: url('../images/background-page.jpg');
+  background-size: cover;
+  background-position: center;
+}

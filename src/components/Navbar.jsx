@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -28,11 +28,26 @@ function Navbar() {
           width: '120px',
         };
 
+  const audioRef = useRef(null);
+
+  const handleLinkClick = () => {
+    if (audioRef.current) {
+      audioRef.current.play();
+    }
+  };
+
   return (
     <>
       <nav className="navbar">
         <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
+          <Link
+            to="/"
+            className="navbar-logo"
+            onClick={() => {
+              closeMenu();
+              handleLinkClick();
+            }}
+          >
             <img
               className="navbar-logo-img"
               src={logo}
@@ -46,27 +61,58 @@ function Navbar() {
         </div>
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
-            <Link to="/quiz" className="nav-links" onClick={closeMenu}>
+            <Link
+              to="/quiz"
+              className="nav-links"
+              onClick={() => {
+                closeMenu();
+                handleLinkClick();
+              }}
+            >
               Star Wars Quiz
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/lightsaber" className="nav-links" onClick={closeMenu}>
+            <Link
+              to="/lightsaber"
+              className="nav-links"
+              onClick={() => {
+                closeMenu();
+                handleLinkClick();
+              }}
+            >
               Lightsaber Duel
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/soundboard" className="nav-links" onClick={closeMenu}>
+            <Link
+              to="/soundboard"
+              className="nav-links"
+              onClick={() => {
+                closeMenu();
+                handleLinkClick();
+              }}
+            >
               SoundBoard
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/translator" className="nav-links" onClick={closeMenu}>
+            <Link
+              to="/translator"
+              className="nav-links"
+              onClick={() => {
+                closeMenu();
+                handleLinkClick();
+              }}
+            >
               Galactic Translator
             </Link>
           </li>
         </ul>
       </nav>
+      <audio ref={audioRef} src="../sounds/clicksound.mp3">
+        <track kind="captions" src="" label="captions" />
+      </audio>
       <Outlet />
     </>
   );
