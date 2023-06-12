@@ -18,6 +18,27 @@ function Board() {
 
       image: `${process.env.PUBLIC_URL}/images/chewbacca.jpg`,
     },
+    {
+      name: 'Blaster',
+
+      src: '../sounds/blaster.mp3',
+
+      image: `${process.env.PUBLIC_URL}/images/blaster.jpg`,
+    },
+    {
+      name: 'Vader',
+
+      src: '../sounds/vader.mp3',
+
+      image: `${process.env.PUBLIC_URL}/images/vader.jpg`,
+    },
+    {
+      name: 'Destroyer',
+
+      src: '../sounds/hyperspace.mp3',
+
+      image: `${process.env.PUBLIC_URL}/images/destroyer.jpg`,
+    },
   ];
   return (
     <div className="container">

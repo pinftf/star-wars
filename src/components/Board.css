@@ -1,17 +1,39 @@
 .soundboard {
-  background-color: #000;
+  background: linear-gradient(135deg, #000000 0%, #070707 50%, #272727 100%);
   color: #fff;
   padding: 20px;
+  border-radius: 5px;
 }
 
-h2 {
+.soundboard h2 {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Star-Wars', 'sans-serif';
+  color: #ffe81f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .sound-buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.sound-button {
+  background-color: #ffe81f;
+  color: #fbd432;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Star-Wars', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.sound-button:hover {
+  background-color: #fbd432;
 }

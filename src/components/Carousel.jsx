@@ -11,7 +11,7 @@ function Carousela() {
       <section className="carousel" aria-label="Gallery">
         <ol className="carousel__viewport">
           <li id="carousel__slide1" className="carousel__slide">
-            <img src={Image1} alt="Image1" />
+            <img src={Image1} alt="" />
             <div className="carousel__snapper">
               <a href="#carousel__slide4" className="carousel__prev">
                 Go to last slide
