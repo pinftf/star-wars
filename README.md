@@ -27,11 +27,90 @@ To use this project, follow the steps below:
 
 1. Clone the repository:
 
-   ````bash
+   ```bash
    git clone https://github.com/pinftf/star-wars.git
 
-   2. Navigate to the project directory:
+   ```
 
-   ```bash
-   cd star-wars
-   ````
+2. Navigate to the project directory:
+
+```bash
+cd star-wars
+```
+
+3.  Install dependencies:
+
+```bash
+git npm install
+
+@fortawesome/fontawesome-svg-core (version ^6.4.0)
+@fortawesome/free-solid-svg-icons (version ^6.4.0)
+@fortawesome/react-fontawesome (version ^0.2.0)
+react-router-dom (version ^6.11.2)
+```
+
+## Table of Contents
+
+- [Usage](#usage)
+  - [Quiz](#quiz)
+  - [Lightsaber Duel](#lightsaber-duel)
+  - [Soundboard](#soundboard)
+  - [Galactic Translator](#galactic-translator)
+- [Installation](#installation)
+- [Contributing](#contributing)
+- [License](#license)
+- [Authors](#authors)
+- [Acknowledgments](#acknowledgments)
+
+## Usage
+
+### Quiz
+
+To take the Star Wars quiz:
+
+1. Navigate to the Quiz section of the website.
+2. Click on the "Start Quiz" button to begin.
+3. Read each question and select the correct answer from the multiple-choice options.
+4. Feel free to retake the quiz to improve your score or challenge your friends to beat your high score!
+
+### Lightsaber Duel
+
+Engage in lightsaber duels with iconic Star Wars characters:
+
+1. Go to the Lightsaber Duel section.
+2. Choose your side - Jedi or Sith.
+3. Select your preferred lightsaber color and hilt design.
+4. Follow the on-screen instructions to control your lightsaber movements.
+5. Face off against opponents by deflecting blaster bolts or engaging in close combat.
+6. Use the Force wisely and showcase your lightsaber skills.
+
+### Soundboard
+
+Immerse yourself in the sounds of the Star Wars universe:
+
+1. Open the Soundboard section.
+2. Explore the collection of iconic sound effects, quotes, and music from the movies.
+3. Click on any sound item to play it.
+4. Enjoy reliving your favorite moments and bringing the Star Wars universe to life with the power of sound.
+
+### Galactic Translator
+
+Translate common phrases into various Star Wars languages:
+
+1. Visit the Galactic Translator section.
+2. Enter a phrase or expression in the input box.
+3. Communicate like your favorite Star Wars characters and impress your friends with your intergalactic linguistic skills.
+
+Feel free to explore and interact with all the features of the Star Wars Website. May the Force be with you!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Authors
+
+- João Pinto
+
+## Acknowledgments
+
+I would like to thanks to all the teachers and persons that helped me in the Front-end Developer Course
