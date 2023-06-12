@@ -47,7 +47,7 @@ function Navbar() {
         <ul className={click ? 'nav-menu active' : 'nav-menu'}>
           <li className="nav-item">
             <Link to="/quiz" className="nav-links" onClick={closeMenu}>
-              Character Quiz
+              Star Wars Quiz
             </Link>
           </li>
           <li className="nav-item">
